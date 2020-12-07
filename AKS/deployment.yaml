@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openas-api
+  namespace: dev
+  labels:
+    app: openas-api
+  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openas-api
+  template:
+    metadata:
+      name: openas-api
+      labels:
+        app: openas-api
+    spec:
+      containers:
+        - name: openas-api
+          image: __image-name__:__image-tag__
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9085
+          volumeMounts:
+          - mountPath: "myapp/data/"
+            name: volume
+          - mountPath: "myapp/logs"
+            name: logs
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      
+      volumes:
+      - name: volume
+        persistentVolumeClaim:
+          claimName: azurefile
+
+      - name: logs
+        persistentVolumeClaim:
+          claimName: logs

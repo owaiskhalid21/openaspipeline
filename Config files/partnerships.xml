@@ -1,0 +1,433 @@
+<partnerships>
+  <partner name="CoosemansDC_Partenr" as2_id="CoosemansDC" x509_alias="CoosemansDC" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="945_Out_001_Outbound945_US-001_to_PartnerLink">
+    <sender name="CoosemansDC_Partenr" />
+    <receiver name="CoosemansDC_Partenr" />
+    <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://localhost:9085/" />
+    <attribute name="as2_mdn_to" value="aamir.hussain@partnerlinkedi.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+  <partner name="ITOENTEST_Inbound_PartnerLink" as2_id="PLITOENTEST" x509_alias="PLITOENTEST" email="PLAdmin@partnerlinkedi.com" />
+  <partner name="ITOENPROD_PartnerLink" as2_id="PLITOENPROD" x509_alias="PLITOENPROD" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="ITOENTEST_IN_to_PartnerLink">
+    <sender name="ITOENTEST_Inbound_PartnerLink" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://localhost:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+   <partner name="ITOENCASESTACK_Partner" as2_id="HUBGGIS" x509_alias="HUBGGIS" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="ITOENCASESTACK_IN_to_PartnerLink">
+    <sender name="ITOENCASESTACK_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <!--<attribute name="compression_type" value="ZLIB" />-->
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA1" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA1" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="true" />
+  </partnership>
+    <partnership name="ITOENCASESTACK_Outbound_PartnerLink_to_ITOENCASESTACK">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="ITOENCASESTACK_Partner" />
+    <attribute name="protocol" value="AS2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <!--<attribute name="compression_type" value="ZLIB" />-->
+    <attribute name="subject" value="CASESTACK_PROD_MDN_PL" />
+    <attribute name="as2_url" value="http://ecs20.hubgroup.com:8002/as2" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,SHA1" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA1" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="true" />
+  </partnership>
+  <partner name="ITOENCHRBN_Partner" as2_id="CHRW_AS2" x509_alias="CHRW_AS2" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="ITOENCHRBN_IN_to_PartnerLink">
+    <sender name="ITOENCHRBN_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+    <partnership name="ITOENCHRBN_Outbound_PartnerLink_to_ITOENCHRBN">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="ITOENCHRBN_Partner" />
+    <attribute name="protocol" value="AS2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="CHRBNPROD_MDN_PL" />
+    <attribute name="as2_url" value="http://as2-prod.chrobinson.com:4080/as2" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,sha256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="sha256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+  <partner name="ITOENDOTFOOD_Partner" as2_id="DOTFOODSAS2" x509_alias="DOTFOODSAS2" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="ITOENDOTFOOD_IN_to_PartnerLink">
+    <sender name="ITOENDOTFOOD_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+    <partnership name="ITOENDOTFOOD_Outbound_PartnerLink_to_ITOENDOTFOOD">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="ITOENDOTFOOD_Partner" />
+    <attribute name="protocol" value="AS2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="DOTFOODPROD_MDN_PL" />
+    <attribute name="as2_url" value="http://as2.DOTFOODS.COM:4080/msgsrv/as2" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,sha256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="sha256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+   <partner name="ITOENKHETOL_Partner" as2_id="BABELWAY_AS2_32796" x509_alias="BABELWAY_AS2_32796" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="ITOENKHETOL_IN_to_PartnerLink">
+    <sender name="ITOENKHETOL_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+    <partnership name="ITOENKHETOL_Outbound_PartnerLink_to_ITOENKHETOL">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="ITOENKHETOL_Partner" />
+    <attribute name="protocol" value="AS2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="KHETOL_MDN_PL" />
+    <attribute name="as2_url" value="http://us1.babelway.net/corvus/httpd/as2/inbound" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,sha256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="sha256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+  <partner name="ITOENYusenLogistics_Partner" as2_id="YusenLogistics_Prod" x509_alias="YusenLogistics_Prod" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="ITOENYusenLogistics_IN_to_PartnerLink">
+    <sender name="ITOENYusenLogistics_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="true" />
+  </partnership>
+    <partnership name="ITOENYusenLogistics_Outbound_PartnerLink_to_ITOENYusenLogistics">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="ITOENYusenLogistics_Partner" />
+    <attribute name="protocol" value="AS2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="PRODITOENYusenLogistics_MDN_PL" />
+    <attribute name="as2_url" value="http://b2b.us.yusen-logistics.com:8080/b2bhttp/inbound/as2" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,sha256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="sha256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="true" />
+  </partnership>
+  <partner name="ITOENAMAZON_Partner" as2_id="SNAMHG8EFR3VC" x509_alias="SNAMHG8EFR3VC" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="ITOENAMAZON_IN_to_PartnerLink">
+    <sender name="ITOENAMAZON_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, sha256" />
+    <attribute name="encrypt" value="AES256" />
+    <attribute name="sign" value="sha256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+    <partnership name="ITOENAMAZON_Outbound_PartnerLink_to_ITOENAMAZON">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="ITOENAMAZON_Partner" />
+    <attribute name="protocol" value="AS2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <!--<attribute name="compression_type" value="ZLIB" />-->
+    <attribute name="subject" value="PRODAMAZON_MDN_PL" />
+    <attribute name="as2_url" value="http://as2.amazonsedi.com/c9cf0bee-e03e-41b2-8a99-ed2214cd3f50" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,sha256" />
+    <attribute name="encrypt" value="AES256" />
+    <attribute name="sign" value="sha256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+  <partner name="ITOENEASCOA_Partner" as2_id="EASCOA" x509_alias="EASCOA" email="econcepcion@eastcoastwarehouse.com" />
+ <partnership name="ITOENEASCOA_IN_to_PartnerLink">
+    <sender name="ITOENEASCOA_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="AES256" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+    <partnership name="ITOENEASCOA_Outbound_PartnerLink_to_ITOENEASCOA">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="ITOENEASCOA_Partner" />
+    <attribute name="protocol" value="AS2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="EASCOAPROD_MDN_PL" />
+    <attribute name="as2_url" value="http://andlor.eastcoastwarehouse.com:5080/as2" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,sha256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="sha256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+  <partner name="ITOENUNFI_Partner" as2_id="EdictSystems" x509_alias="EdictSystems" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="ITOENUNFI_IN_to_PartnerLink">
+    <sender name="ITOENUNFI_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+    <partnership name="ITOENUNFI_Outbound_PartnerLink_to_ITOENUNFI">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="ITOENUNFI_Partner" />
+    <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="ITOENUNFIPROD_MDN_PL" />
+    <attribute name="as2_url" value="http://as2.enterpriseec.com:4080/as2receiver/default.aspx" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+  <partner name="PLVAN_Partner" as2_id="ITOEN_PROD" x509_alias="ITOEN_PROD" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="PLVAN_IN_to_PartnerLink">
+    <sender name="PLVAN_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+    <partnership name="PLVAN_Outbound_PartnerLink_to_PLVAN">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="PLVAN_Partner" />
+    <attribute name="protocol" value="AS2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="PLVANPROD_MDN_PL" />
+    <attribute name="as2_url" value="http://itoenprod.as2.ecgrid.io" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,sha256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="sha256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+  <partner name="ITOENTRADERJOES_Partner" as2_id="SPSCAS2" x509_alias="SPSCAS2" email="PLAdmin@partnerlinkedi.com" />
+  <partnership name="ITOENTRADERJOES_IN_to_PartnerLink">
+    <sender name="ITOENTRADERJOES_Partner" />
+    <receiver name="ITOENPROD_PartnerLink" />
+   <attribute name="protocol" value="as2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="File $attributes.filename$ sent from $sender.name$ to $receiver.name$" />
+    <attribute name="as2_url" value="http://52.186.100.106:9085/" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed- receipt - protocol=optional, pkcs7 - signature; signed - receipt - micalg=optional, SHA256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="SHA256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+    <partnership name="ITOENTRADERJOES_Outbound_PartnerLink_to_ITOENTRADERJOES">
+    <sender name="ITOENPROD_PartnerLink" />
+    <receiver name="ITOENTRADERJOES_Partner" />
+    <attribute name="protocol" value="AS2" />
+    <attribute name="content_transfer_encoding" value="8bit" />
+    <attribute name="compression_type" value="ZLIB" />
+    <attribute name="subject" value="ITOENTRADERJOESPROD_MDN_PL" />
+    <attribute name="as2_url" value="http://spsas2.commercevan.com/receive/E36363D2" />
+    <attribute name="as2_mdn_to" value="usman.iqbal@visionet.com" />
+    <attribute name="as2_mdn_options" value="signed-receipt-protocol=optional,pkcs7-signature;signed-receipt-micalg=optional,sha256" />
+    <attribute name="encrypt" value="3DES" />
+    <attribute name="sign" value="sha256" />
+    <attribute name="resend_max_retries" value="5" />
+    <attribute name="prevent_canonicalization_for_mic" value="false" />
+    <attribute name="no_set_transfer_encoding_for_signing" value="false" />
+    <attribute name="no_set_transfer_encoding_for_encryption" value="false" />
+    <attribute name="rename_digest_to_old_name" value="false" />
+    <attribute name="remove_cms_algorithm_protection_attrib" value="false" />
+  </partnership>
+</partnerships>
